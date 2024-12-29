@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+
+    <style>
+
+        body {
+            overflow-x:hidden;
+            background-color: #ffd5f7;
+            margin: 0;
+            padding: 0;
+        }
+        #header-container{
+            padding-top:10px;
+            padding: 10px;
+            display: flex;
+            width: 100%;
+            height: 85px;
+            background: #faafff;
+            box-shadow: 0 0 50px 5px #ef9fff;
+            justify-content:space-evenly;
+        }
+        .socmed-btn{
+            justify-content: center;
+            text-align: center;
+            border-radius: 25px;
+            padding-left: 4px;
+            padding-right: 4px;
+            min-width: 175px;
+            cursor: pointer;
+            font-size: 30px;
+            font-weight: bold;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: rgb(255, 217, 242);
+            color: rgb(228, 146, 253);
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            transition-duration: .4s;
+        }
+        .socmed-btn:hover {
+            transform: scale(1.1);
+            filter: brightness(1.2);
+        }
+        @keyframes reveal {
+            0% {
+                transform: translate(0, 100%);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        #desc-cont{
+            display: flex;
+            margin: 10%;
+            padding: 0;
+            
+
+        }  
+        #picko{
+            size: 50%;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="header-container">
+        <div class="socmed-btn" id="fb" onclick="fbrd()">FACEBOOK</div>
+        <div class="socmed-btn" id="twt" onclick="twtrd()">TWITTER</div>
+        <div class="socmed-btn" id="tg" onclick="tgrd()">TELEGRAM</div>
+        <div class="socmed-btn" id="ig" onclick="igrd()">INSTAGRAM</div>
+        <div class="socmed-btn" id="vbr" onclick="vbrrd()">VIBER</div>
+    </div>
+
+    <div id="desc-cont">
+        <img src="picko.png" alt="first pic" width="15%">
+        <div> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quis commodi nihil dolores sint aut? Corporis architecto iusto ea modi voluptatibus neque accusamus repellat illum officia ullam tenetur inventore, consequatur nesciunt.</div>
+
+    </div>
+
+</body>
+<script>
+    function fbrd() {
+        window.open('https://www.facebook.com/trexcrybaby', '_blank');
+    }
+    function twtrd() {
+        window.open('https://x.com/_therax', '_blank');
+    }
+    function tgrd() {
+        window. pen('https://t.me/raxinarex', '_blank');
+    }
+    function igrd() {
+        window.open('https://www.instagram.com/_therax/', '_blank');
+    }
+    function vbrrd() {
+        window.open('www.facebook.com', '_blank');
+    }
+
+
+</script>
+</html>

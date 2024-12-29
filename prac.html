@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reveal Animation on Scroll</title>
+    <style>
+        /* Animation keyframes */
+        @keyframes reveal {
+            0% {
+                transform: translate(0, 100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translate(0, 0);
+                opacity: 1;
+            }
+        }
+
+        /* Initial styling for the animated element */
+        .reveal {
+            opacity: 0; /* Initially hidden */
+            transform: translate(0, 100%);
+            transition: opacity 0.5s ease-out;
+        }
+
+        /* Class to trigger the animation */
+        .reveal-visible {
+            animation: reveal 0.7s ease-out forwards;
+        }
+
+        /* Page styling for demonstration */
+        .content {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">Scroll down to reveal the text below</div>
+    <div class="content reveal" id="revealElement">Hello! I am revealed on screen!</div>
+
+    <script>
+        // Intersection Observer to reveal the element when it appears on screen
+        const revealElement = document.getElementById('revealElement');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal-visible');
+                } else {
+                    entry.target.classList.remove('reveal-visible'); // Optionally hide when off-screen
+                }
+            });
+        });
+
+        observer.observe(revealElement);
+    </script>
+</body>
+</html>
